@@ -1,0 +1,95 @@
+.tabs {
+    display: flex;
+    list-style: none;
+    border-bottom: 1px solid #c3c4c7;
+    padding: 6px 10px;
+    line-height: inherit;
+}
+
+.tabs li {
+    margin: 0;
+}
+
+.tabs a {
+    border: 1px solid #c3c4c7;
+    border-bottom: none;
+    margin-right: 0.5em;
+    font-size: 14px;
+    padding: 9px 10px;
+    line-height: 1.71428571;
+    font-weight: 600;
+    background: #dcdcde;
+    color: #50575e;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+.tabs_item {
+    display: none;
+}
+
+.tabs_item:first-child {
+    display: block;
+}
+
+.tabs .current a {
+    border-bottom: 1px solid #f0f0f1;
+    background: #f0f0f1;
+    color: #000;
+}
+.tabs a:hover,
+.tabs a:focus {
+    background-color: #fff;
+    color: #3c434a;
+    box-shadow: none;
+}
+
+
+
+
+input[type=checkbox], input[type=radio] {
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    background: #fff;
+    color: #50575e;
+    clear: none;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 0;
+    height: 1rem;
+    margin: -0.25rem 0 0 0.25rem;
+    outline: 0;
+    padding: 0!important;
+    text-align: center;
+    vertical-align: middle;
+    width: 1rem;
+    min-width: 1rem;
+    -webkit-appearance: none;
+    box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+    transition: .05s border-color ease-in-out;
+}
+
+
+.form-table th {
+    vertical-align: top;
+    text-align: right;
+    padding: 20px 0 20px 10px;
+    width: 200px;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.form-table th, .form-wrap label {
+    color: #1d2327;
+    font-weight: 400;
+    text-shadow: none;
+    vertical-align: baseline;
+}
+
+.form-table td {
+    margin-bottom: 9px;
+    padding: 15px 10px;
+    line-height: 1.3;
+    vertical-align: middle;
+}
