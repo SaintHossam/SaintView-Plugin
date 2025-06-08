@@ -27,11 +27,11 @@ class saint_views_widget_popular extends WP_Widget {
 
 		$popular_posts = get_posts($posts);
 
-		foreach ($popular_posts as $post) { ?>
+		 foreach ($popular_posts as $post) { ?>
 
-			<div class="row pb-3">
-				<div class="col-5 align-self-center">
-                    <img src="<?php echo get_the_post_thumbnail($post); ?>" alt="<?php the_title(); ?>" class="saint_most_trading">
+		<div class="row pb-3">
+                                <div class="col-5 align-self-center">
+                    <img src="<?php echo esc_url( get_the_post_thumbnail_url( $post->ID ) ); ?>" alt="<?php echo esc_attr( $post->post_title ); ?>" class="saint_most_trading">
                 </div>
 				<div class="col-7 paddding">
 					<div class="most_saint_treding_font"><?php echo $post->post_title; ?></div>
@@ -122,9 +122,17 @@ class saint_views_widget_popular extends WP_Widget {
 
 	<?php }
 
-	public function update( $new_instance, $old_instance ) {
-		// processes widget options to be saved
-	}
+	 public function update( $new_instance, $old_instance ) {
+                $instance = array();
+
+                $instance['title'] = sanitize_text_field( $new_instance['title'] );
+                $instance['posts_number'] = absint( $new_instance['posts_number'] );
+                $instance['posts_order'] = ( $new_instance['posts_order'] === 'asc' ) ? 'asc' : 'desc';
+                $instance['show_counter'] = ! empty( $new_instance['show_counter'] ) ? 1 : 0;
+                $instance['show_date'] = ! empty( $new_instance['show_date'] ) ? 1 : 0;
+
+                return $instance;
+        }
 }
 
 
