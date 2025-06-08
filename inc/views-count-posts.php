@@ -22,7 +22,7 @@ function num_views($content) {
 
 	update_post_meta($post_id, 'num_views', $update_posts_views);
 
-	$box_count = "<div class='box-count'> <i class='$icon pl-1'></i> $views  ". $word_views ." </div> ";
+	$box_count = "<div class='box-count'> <i class='$icon pl-1'></i> $update_posts_views ". $word_views ." </div> ";
 
 
 
